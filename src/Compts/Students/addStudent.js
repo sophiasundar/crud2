@@ -67,9 +67,9 @@ const AddStudent = ({studentList,setStudentList})=>{
                 <Button 
                   sx={{marginRight:'30%',width:"8.5"}}
                 variant="contained"
-                      // onClick={()=>{
-                      //   navigate('/')    
-                      //    }}
+              //   onClick={()=>{
+              //     navigate('/')
+              // }}
                >Back</Button>
                 
              </Stack>

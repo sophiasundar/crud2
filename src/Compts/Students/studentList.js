@@ -2,13 +2,13 @@ import { allStudent } from "./allStudents"
 import Students from "./student"
 
 
-const StudentList=()=>{
+const StudentList=({studentList})=>{
     return(
         <>
            <div className='App'>
 
              {
-                allStudent.map((element,index)=>{
+                studentList.map((element,index)=>{
                     return <Students {...element} key={index}/>
                 })
              }
