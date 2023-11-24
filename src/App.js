@@ -10,6 +10,8 @@ import TeacherList from './Compts/Teacher/teacherList';
 import { allTeacher } from './Compts/Teacher/allTeacher';
 import NotFound from './Compts/NotFound';
 import { EditStudent } from './Compts/Students/editStudent';
+import AddTeacher from './Compts/Teacher/addTeacher';
+import { EditTeacher } from './Compts/Teacher/editTeacher';
 
 
 function App() {
@@ -33,9 +35,9 @@ function App() {
           
           <Route exact path='/teacherlist' element={<TeacherList teacherList={teacherList}/>}/>
 
-          {/* <Route exact path= '/addteacher' element={}/> */}
+          <Route exact path= '/addteacher' element={<AddTeacher setTeacherList={setTeacherList} teacherList={teacherList} />}/>
 
-
+          <Route exact path= "/editteacher/:id" element={<EditTeacher/>}/>
 
           <Route path='*' element = {<Navigate replace to='/404'/>}/>
           <Route path="/404" element={<NotFound/>}/>

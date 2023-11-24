@@ -9,7 +9,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 
 const TeacherList=()=>{
-         // https://6560586d83aba11d99d0a65e.mockapi.io/teacher
+         
     const navigate = useNavigate()
     const [teacherList,setTeacherList]=useState([])
 
@@ -20,7 +20,7 @@ const TeacherList=()=>{
      }
 
      const deleteTeacher=(id)=>{
-      fetch(`https://6560586d83aba11d99d0a65e.mockapi.io/student/${id}`, {method:"DELETE"}
+      fetch(`https://6560586d83aba11d99d0a65e.mockapi.io/teacher/${id}`, {method:"DELETE"}
       )
       .then((data)=>data.json())     
       .then((res)=>{getTeacher()})
@@ -53,7 +53,7 @@ const TeacherList=()=>{
                   <IconButton aria-label="delete">
                      <EditIcon
                         onClick={()=>{
-                           navigate(`/edit/${element.id}`)
+                           navigate(`/editteacher/${element.id}`)
                           }}
                      />
                   </IconButton>

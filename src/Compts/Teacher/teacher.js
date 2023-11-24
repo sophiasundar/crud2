@@ -6,7 +6,7 @@ import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import { pink } from '@mui/material/colors';
 
-     const Teacher = ({ name,Qualification,year,id,editButton,deleteButton})=>{
+     const Teacher = ({ name,qualification,year,id,editButton,deleteButton})=>{
         return(
         <>
          <Card sx={{ width: "310px", marginBottom: "20px" }}>
@@ -25,7 +25,7 @@ import { pink } from '@mui/material/colors';
 
       <CardContent>
         
-        <Typography paragraph> <b>Qualification:</b> {Qualification} </Typography>
+        <Typography paragraph> <b>Qualification:</b> {qualification} </Typography>
 
         <Typography paragraph><b>Year:</b> {year} </Typography>
                      {editButton}

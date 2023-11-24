@@ -58,7 +58,7 @@ export const EditStudent=()=>{
                     
                     <TextField 
                        sx={{width: "50%", margin:"8% 25% 2% 25%"}}
-                    id="outlined-basic" label="Outlined" variant="outlined" 
+                    id="outlined-basic" label="Name:" variant="outlined" 
                     value={name}
                     onChange={(e)=>{
                       setName(e.target.value)
@@ -67,7 +67,7 @@ export const EditStudent=()=>{
 
                     <TextField 
                         sx={{width: "50%", margin:"0% 25% 2% 25%"}}
-                    id="outlined-basic" label="Outlined" variant="outlined" 
+                    id="outlined-basic" label="Batch:" variant="outlined" 
                     value={batch}
                     onChange={(e)=>{
                       setBatch(e.target.value)
@@ -75,7 +75,7 @@ export const EditStudent=()=>{
                     />
                     <TextField 
                          sx={{width: "50%", margin:"0% 25% 2% 25%"}}
-                    id="outlined-basic" label="Outlined" variant="outlined" 
+                    id="outlined-basic" label="Year:" variant="outlined" 
                     value={year}
                     onChange={(e)=>{
                       setYear(e.target.value)
