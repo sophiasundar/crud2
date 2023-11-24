@@ -33,7 +33,7 @@ function App() {
           
           <Route exact path='/teacherlist' element={<TeacherList teacherList={teacherList}/>}/>
 
-          <Route exact path= '/addteacher' element={}/>
+          {/* <Route exact path= '/addteacher' element={}/> */}
 
 
 
