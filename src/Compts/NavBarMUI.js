@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router';
 
+
 const NavBarMUI=()=>{
     const navigate = useNavigate()
     return(
@@ -14,9 +15,10 @@ const NavBarMUI=()=>{
      
      <Box sx={{ display: 'flex' }}>
         <CssBaseline />
-        <AppBar component="nav">
+
+        <AppBar  component="nav">
         
-        <Toolbar>
+        <Toolbar >
 
           <Typography
             variant="h6"
@@ -31,27 +33,28 @@ const NavBarMUI=()=>{
                onClick={()=>{
                    navigate('/')
                }}
-              >Dashboard</Button>
+              >DASHBOARD</Button>
 
               <Button sx={{ color: '#fff' }}
                 onClick={()=>{
                    navigate('/addstudent')
-               }}> Add Student
+               }}> ADD STUDENT
               </Button>
 
               <Button sx={{ color: '#fff' }}
                 onClick={()=>{
                    navigate('/addteacher')
-               }}> Add Teacher
+               }}> ADD TEACHER
               </Button>
          
           </Box>
         </Toolbar>
-
-
-        </AppBar>
+       
+      </AppBar>
+     
+      
      </Box>
-
+    
     </>
     )
 }

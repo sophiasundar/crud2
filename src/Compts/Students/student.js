@@ -6,14 +6,17 @@ import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import { pink } from '@mui/material/colors';
 
-    const Students = ({name,batch,year,id})=>{
+
+    const Students = ({name,batch,year,id,editButton,deleteButton})=>{
        
          return(
             <>
-            
+             
             <Card sx={{ width: "310px", marginBottom: "20px" }}> 
-            
+            <br></br>
+           
             <CardHeader
+              
             avatar={
                 <Avatar sx={{ bgcolor: pink[100] }} aria-label="id">
                     {id}
@@ -26,6 +29,9 @@ import { pink } from '@mui/material/colors';
             <CardContent>
                 <Typography paragraph><b>Batch:</b>  {batch} </Typography>
                 <Typography paragraph><b>Year:</b>  {year} </Typography>
+                      {editButton}
+                      {deleteButton}
+            
             </CardContent>
             
             </Card>
