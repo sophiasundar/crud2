@@ -1,0 +1,18 @@
+.valid{
+	display:block;
+  flex-direction:row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 380px;
+  margin-top: 80px;
+  margin-bottom: 0px;
+  margin-right: 500px;
+  padding: 10px;
+  text-decoration:underline;
+  text-decoration-color:red ;
+  /* border:2px solid blanchedalmond; */
+}
+
+.field{
+    padding-top: 1px;
+}

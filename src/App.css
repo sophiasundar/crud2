@@ -22,11 +22,15 @@
 }
 
 *{
-  padding: 0;
+  padding: 1px;
   margin:0;
 }
 
 .card{
   margin-left:20%;
   margin-top:10%;
+}
+
+.field{
+  padding-top: 1px;
 }
