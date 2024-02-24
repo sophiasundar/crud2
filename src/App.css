@@ -15,10 +15,12 @@
   gap:2%;
   flex-wrap: wrap;
   /* border:1px solid black; */
+  
   width:90%;
   margin-right:5%;
   margin-left:5%;
   margin-top:2%; 
+  background-color: beige;
 }
 
 *{

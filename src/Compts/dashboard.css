@@ -1,5 +1,5 @@
 .header{
-    margin-left: 180px !important;
+    margin-left: 230px !important;
     margin-top: 50px;
     margin-bottom: 0px;
   }
@@ -7,11 +7,17 @@
   .card{
     margin-top: 80px;
     margin-left: 200px ;
-    
+    margin-bottom: 50px;
   }
 
   .card-img-top{
     margin-bottom: 10px;
+  }
+
+  .para{
+    border:0px solid black;
+    padding: 30px;
+    margin-top: 50px;
   }
 
   .cardholder{
@@ -21,7 +27,7 @@
     border:0px solid;
     width: 1030px;
     margin-right:3%;
-    margin-left:20%;
+    margin-left:25%;
     margin-top:2%;
     margin-bottom:2%;
   }

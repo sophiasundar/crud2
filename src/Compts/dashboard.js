@@ -48,7 +48,9 @@ const Dashboard=()=>{
         
         
         </div>
+        {/* <br></br> */}
 
+             <p className='para'>Student teachers' duties include helping with lesson plans, organizing learning activities, managing student behaviors, observing classroom procedures, preparing visual materials and other educational equipment, providing feedback for students, and keeping students' records for evaluation.</p>
         </div>
        
     </>
