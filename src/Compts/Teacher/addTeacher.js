@@ -16,9 +16,9 @@ const AddTeacher=()=>{
 
     const handleSubmit= async(e)=>{
         const teacher={
-            name:name,
-            qualification,
-            year,
+            name:name.trim(),
+            qualification:qualification.trim(),
+            year:year.trim(),
         }
          console.log(teacher)
 
@@ -65,7 +65,7 @@ const AddTeacher=()=>{
       id="outlined-basic" label="Name:" variant="outlined" 
        value={name.trim()}
         onChange={(e)=>{
-            setName(e.target.value)
+            setName(e.target.value.trim())
         }}
       />
 
@@ -74,7 +74,7 @@ const AddTeacher=()=>{
       id="outlined-basic" label="Qualification:" variant="outlined" 
       value={qualification.trim()}
       onChange={(e)=>{
-          setQualification(e.target.value)
+          setQualification(e.target.value.trim())
       }}
       />
       
@@ -83,7 +83,7 @@ const AddTeacher=()=>{
       id="outlined-basic" label="Year:" variant="outlined"
       value={year.trim()}
       onChange={(e)=>{
-          setYear(e.target.value)
+          setYear(e.target.value.trim())
       }}
       />
     </Box>
