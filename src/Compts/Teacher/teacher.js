@@ -5,11 +5,16 @@ import CardContent from '@mui/material/CardContent';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import { pink } from '@mui/material/colors';
+import teacher from './teacher.css'
 
      const Teacher = ({ name,qualification,year,id,editButton,deleteButton})=>{
         return(
+         
+         
         <>
-         <Card sx={{ width: "310px", marginBottom: "20px" }}>
+         
+         <div>
+         <Card className='card' sx={{ width: "310px", marginBottom: "20px" }}>
          <br></br>
          <CardHeader
             avatar={
@@ -34,7 +39,7 @@ import { pink } from '@mui/material/colors';
            
 
           </Card> 
-
+          </div>
 
         </>
         )

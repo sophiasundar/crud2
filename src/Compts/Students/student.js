@@ -5,14 +5,14 @@ import CardContent from '@mui/material/CardContent';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import { pink } from '@mui/material/colors';
-
+import student from "./student.css"
 
     const Students = ({name,batch,year,id,editButton,deleteButton})=>{
        
          return(
             <>
-             
-            <Card sx={{ width: "310px", marginBottom: "20px" }}> 
+            
+            <Card className='card' sx={{ width: "310px", marginBottom: "20px" }}> 
             <br></br>
            
             <CardHeader

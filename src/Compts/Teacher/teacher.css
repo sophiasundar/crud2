@@ -1,0 +1,12 @@
+.card{
+    display: flex !important;
+    gap:1%;
+    flex-wrap: wrap;
+    border:0px solid;
+    width: 250px ;
+    margin-right:3%;
+    margin-left:2%;
+    margin-top:5%;
+    margin-bottom:2%;
+    
+}
