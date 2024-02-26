@@ -17,32 +17,62 @@ export const EditStudent=()=>{
           .then((data)=>data.json())
           .then((res)=>setStudent(res))
     }
-    useEffect(()=> getStudent(),[])
+    useEffect(()=> getStudent(),[id])
 
        return(
         <>
-          {student? <EditStudentField student={student}/>: "Loading...." }
+          {student? <EditStudentField student={student} id={id}/>: "Loading...." }
         </>
        )
 }
 
 
-    const EditStudentField = ({student})=>{
+    const EditStudentField = ({ student, id })=>{
 
         const navigate = useNavigate()
 
         const [name,setName] = useState(student.name)
         const [batch,setBatch] = useState(student.batch)
         const [year,setYear] = useState(student.year)
+        const [validated,setvalidated] = useState(false)
 
-        const updateStudent=(id)=>{
+        const updateStudent=(e)=>{
             const student= {
                 name: name,
                       batch,
                       year,
-              }
-                // console.log(student)
-      
+              };    
+                console.log(student)
+                
+                if(student.name === ""){
+                  setvalidated("VALID: Name is required");
+                  return;
+            }else if(student.batch === ""){
+                 setvalidated("VALID: Batch is required");
+                 return;
+            }else if(student.year === ""){
+                 setvalidated("VALID: Year is required");
+                 return;
+            }else{
+                setvalidated("")
+            }
+   
+            const form = e.currentTarget;
+            if (form.checkValidity() === false) {
+              e.preventDefault();
+              e.stopPropagation();
+            }
+             setvalidated(true);
+   
+           fetch('https://6560586d83aba11d99d0a65e.mockapi.io/student',{
+               method:"POST",
+               body:JSON.stringify(student),
+               headers:{
+                 "Content-Type":"application/json"
+               }
+             }).then(()=>navigate('/studentlist'))
+
+
                 fetch(`https://6560586d83aba11d99d0a65e.mockapi.io/student/${id}`,{
                   method:"PUT",
                   body:JSON.stringify(student),
@@ -57,7 +87,7 @@ export const EditStudent=()=>{
             
             <Box 
                sx={{  width: "100%" }}>
-                    
+                    <h6 className="valid" >{validated}</h6>
                     <TextField 
                        sx={{width: "50%", margin:"8% 25% 2% 25%"}}
                     id="outlined-basic" label="Name:" variant="outlined" 
@@ -87,20 +117,20 @@ export const EditStudent=()=>{
 
             <Stack spacing={2} direction="row">
                 
-                <Button  className='mvbtn' color='success'
-                 sx={{marginRight:"200%"}} 
-                variant="contained"
-                onClick={()=>{ 
-                    updateStudent(student.id)
-                 }}
-                >Update Profile</Button>
-                
-                <Button className='mvbtn' sx={{marginLeft:"-50%", width: "8.5%"}}  
-                variant="contained"
-                onClick={()=>{
-                    navigate('/')
-                 }}
-                >Back</Button>
+                      <Button  className='mvbtn' color='success'
+                      sx={{marginRight:"200%"}} 
+                      variant="contained"
+                      onClick={()=>{ 
+                          updateStudent(student.id)
+                      }}
+                      >Update Profile</Button>
+                      
+                      <Button className='mvbtn' sx={{marginLeft:"-50%", width: "8.5%"}}  
+                      variant="contained"
+                      onClick={()=>{
+                          navigate('/')
+                      }}
+                      >Back</Button>
 
             </Stack>
 
