@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import { pink } from '@mui/material/colors';
+import Button from '@mui/material/Button';
 import teacher from './teacher.css'
 
      const Teacher = ({ name,qualification,year,id,editButton,deleteButton})=>{
@@ -18,7 +19,7 @@ import teacher from './teacher.css'
          <br></br>
          <CardHeader
             avatar={
-               <Avatar sx={{ bgcolor: pink[100] }} aria-label="id">
+               <Avatar sx={{ bgcolor: pink[300] }} aria-label="id">
                   {id}
                </Avatar>
         }
@@ -33,8 +34,9 @@ import teacher from './teacher.css'
         <Typography paragraph> <b>Qualification:</b> {qualification} </Typography>
 
         <Typography paragraph><b>Year:</b> {year} </Typography>
-                     {editButton}
-                      {deleteButton}
+        <Button className='colorbtn1' variant="contained" color="success">{editButton}</Button> 
+                &nbsp;&nbsp;&nbsp;&nbsp;
+        <Button className='colorbtn2' variant="contained" color="error">{deleteButton}</Button> 
       </CardContent>
            
 

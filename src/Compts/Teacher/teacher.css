@@ -10,3 +10,18 @@
     margin-bottom:2%;
     
 }
+
+.colorbtn1{
+    gap: 2%;
+    width: 5px ;
+    height: 30px;
+    margin-left:60px !important;
+   
+}
+
+.colorbtn2{
+    gap: 2%;
+    width: 5px ;
+    height: 30px;
+    
+}

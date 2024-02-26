@@ -19,7 +19,7 @@ const Dashboard=()=>{
         <h6>Click here to view</h6>
        <h5 class="card-title"> TEACHER LIST</h5>
        <img className="card-img-top" src="https://www.nicepng.com/png/detail/126-1269371_student-list-icon-png.png" alt="Card image cap"></img>
-        <a href="#" class="btn btn-primary">
+        <a href="#" class="btn btn-success">
         <Button className='button' sx={{ color: '#fff' }}
                onClick={()=>{
                    navigate('/teacherlist')
@@ -36,7 +36,7 @@ const Dashboard=()=>{
        <h6>Click here to view</h6>
        <h5 class="card-title">STUDENT LIST</h5>
        <img className="card-img-top" src="https://www.nicepng.com/png/detail/126-1269371_student-list-icon-png.png" alt="Card image cap"></img>
-        <a href="#" class="btn btn-primary">
+        <a href="#" class="btn btn-success">
         <Button className='button' sx={{ color: '#fff' }}
                onClick={()=>{
                    navigate('/studentlist')

@@ -41,7 +41,7 @@ const StudentList=()=>{
                     return <Students {...element} key={index}
                     
                     deleteButton={
-                      <IconButton aria-label="delete" >
+                      <IconButton aria-label="delete" sx={{ color: '#fff' }}>
                         <DeleteIcon 
                           onClick={()=>{
                             deleteStudent(element.id)
@@ -51,7 +51,7 @@ const StudentList=()=>{
                     }
                     
                     editButton={
-                      <IconButton aria-label="edit">
+                      <IconButton aria-label="edit" sx={{ color: '#fff' }}>
                         <EditIcon
                           onClick={()=>{
                             navigate(`/edit/${element.id}`)

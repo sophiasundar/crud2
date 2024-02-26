@@ -89,7 +89,7 @@ const AddStudent=()=>{
 
     <Stack  direction="row" spacing={2}>
       
-      <Button 
+      <Button color="success"
       sx={{margin:"5% 50% 5% 50%"}}
       variant="contained"
         onClick={handleSubmit}

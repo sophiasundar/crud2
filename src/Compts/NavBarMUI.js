@@ -25,7 +25,7 @@ const NavBarMUI=()=>{
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            Student-Teacher Profile
+            Teacher-Student Profile
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             
@@ -35,17 +35,18 @@ const NavBarMUI=()=>{
                }}
               >DASHBOARD</Button>
 
+            <Button sx={{ color: '#fff' }}
+                onClick={()=>{
+                   navigate('/addteacher')
+               }}> ADD TEACHER
+              </Button>
+
               <Button sx={{ color: '#fff' }}
                 onClick={()=>{
                    navigate('/addstudent')
                }}> ADD STUDENT
               </Button>
 
-              <Button sx={{ color: '#fff' }}
-                onClick={()=>{
-                   navigate('/addteacher')
-               }}> ADD TEACHER
-              </Button>
          
           </Box>
         </Toolbar>
