@@ -5,6 +5,8 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import editTeacher from './editTeacher.css';
+
 
 export const EditTeacher=()=>{
     const [teacher,setTeacher] = useState(null)
@@ -51,6 +53,7 @@ export const EditTeacher=()=>{
 
            return(
            <>
+               <h4 className="header">Edit Teacher</h4>
                 <Box sx={{ width: "100%" }}>
                     
                     <TextField 
@@ -86,14 +89,15 @@ export const EditTeacher=()=>{
 
                 <Stack spacing={2} direction="row">
      
-                    <Button 
+                    <Button  className='mvbtn' color='success'
                       sx={{marginRight:"200%"}} 
                     variant="contained"
                         onClick={()=>{ 
                             updateTeacher(teacher.id)
                         }}
-                    >Update Profile</Button>
-                    <Button 
+                    >update teacher</Button>
+
+                    <Button  className='mvbtn'
                       sx={{marginLeft:"-50%", width: "8.5%"}}  
                     variant="contained"
                         onClick={()=>{

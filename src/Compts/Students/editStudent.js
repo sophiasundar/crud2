@@ -5,6 +5,8 @@ import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import editStudent from './editStudent.css';
+
 
 export const EditStudent=()=>{
     const [student,setStudent] = useState(null)
@@ -85,14 +87,15 @@ export const EditStudent=()=>{
 
             <Stack spacing={2} direction="row">
                 
-                <Button sx={{marginRight:"200%"}} 
+                <Button  className='mvbtn' color='success'
+                 sx={{marginRight:"200%"}} 
                 variant="contained"
                 onClick={()=>{ 
                     updateStudent(student.id)
                  }}
                 >Update Profile</Button>
                 
-                <Button sx={{marginLeft:"-50%", width: "8.5%"}}  
+                <Button className='mvbtn' sx={{marginLeft:"-50%", width: "8.5%"}}  
                 variant="contained"
                 onClick={()=>{
                     navigate('/')
