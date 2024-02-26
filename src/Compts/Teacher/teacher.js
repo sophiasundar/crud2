@@ -6,13 +6,14 @@ import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import { pink } from '@mui/material/colors';
 import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
 import teacher from './teacher.css'
 
      const Teacher = ({ name,qualification,year,id,editButton,deleteButton})=>{
         return(
          
-         
-        <>
+          
+        <div>
          
          <div>
          <Card className='card' sx={{ width: "310px", marginBottom: "20px" }}>
@@ -34,16 +35,18 @@ import teacher from './teacher.css'
         <Typography paragraph> <b>Qualification:</b> {qualification} </Typography>
 
         <Typography paragraph><b>Year:</b> {year} </Typography>
-        <Button className='colorbtn1' variant="contained" color="success">{editButton}</Button> 
-                &nbsp;&nbsp;&nbsp;&nbsp;
-        <Button className='colorbtn2' variant="contained" color="error">{deleteButton}</Button> 
+        <Stack  direction="row" spacing={3}>
+            <Button className='colorbtn1' variant="contained" color="success">{editButton}</Button> 
+                    
+            <Button className='colorbtn2' variant="contained" color="error">{deleteButton}</Button> 
+        </Stack>
       </CardContent>
-           
+     
 
           </Card> 
           </div>
 
-        </>
+        </div>
         )
      }
 

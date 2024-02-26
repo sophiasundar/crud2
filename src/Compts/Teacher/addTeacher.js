@@ -54,6 +54,7 @@ const AddTeacher=()=>{
     }
     return(
     <>
+      <h4 className="header">Add Teacher</h4>
         <p className="valid"> {validated}</p>
      <Box
       sx={{ width: "100%"}}
@@ -62,7 +63,7 @@ const AddTeacher=()=>{
           
       <TextField 
         sx={{width: "50%", margin:"0% 25% 2% 25%"}}
-      id="outlined-basic" label="Name:" variant="outlined" 
+      id="outlined-basic" label="Teacher Name: space can be added after the input" variant="outlined" 
        value={name.trim()}
         onChange={(e)=>{
             setName(e.target.value.trim())
@@ -71,7 +72,7 @@ const AddTeacher=()=>{
 
       <TextField 
         sx={{width: "50%", margin:"0% 25% 2% 25%"}}
-      id="outlined-basic" label="Qualification:" variant="outlined" 
+      id="outlined-basic" label="Teacher Qualification:" variant="outlined" 
       value={qualification.trim()}
       onChange={(e)=>{
           setQualification(e.target.value.trim())
@@ -80,7 +81,7 @@ const AddTeacher=()=>{
       
       <TextField 
         sx={{width: "50%", margin:"0% 25% 2% 25%"}}
-      id="outlined-basic" label="Year:" variant="outlined"
+      id="outlined-basic" label="Teacher Year:" variant="outlined"
       value={year.trim()}
       onChange={(e)=>{
           setYear(e.target.value.trim())
@@ -88,15 +89,15 @@ const AddTeacher=()=>{
       />
     </Box>
 
-    <Stack spacing={2} direction="row">
+    <Stack spacing={3} direction="row">
       
-      <Button color="success"
-        sx={{margin:"5% 50% 5% 50%"}}
+      <Button className="btnmove" color="success"
+        // sx={{margin:"5% 50% 5% 50%"}}
         variant="contained"
           onClick={handleSubmit}
       >Add Teacher</Button>
-      <Button variant="contained"
-        sx={{margin:"5% 50% 5% 50%"}}
+      <Button className="btnmove" variant="contained"
+        // sx={{margin:"5% 50% 5% 50%"}}
         onClick={()=>{
          navigate('/')
         }}

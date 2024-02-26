@@ -6,13 +6,14 @@ import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import { pink } from '@mui/material/colors';
 import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
 import student from "./student.css"
 
     const Students = ({name,batch,year,id,editButton,deleteButton})=>{
        
          return(
             <>
-            
+                
             <Card className='card' sx={{ width: "310px", marginBottom: "20px" }}> 
             <br></br>
            
@@ -30,10 +31,11 @@ import student from "./student.css"
             <CardContent>
                 <Typography paragraph><b>Batch:</b>  {batch} </Typography>
                 <Typography paragraph><b>Year:</b>  {year} </Typography>
+                <Stack  direction="row" spacing={3}>
             <Button className='colorbtn1' variant="contained" color="success">{editButton}</Button> 
-                &nbsp;&nbsp;&nbsp;&nbsp;
+               
             <Button className='colorbtn2' variant="contained" color="error">{deleteButton}</Button>       
-            
+               </Stack>
             </CardContent>
             
             </Card>
