@@ -12,12 +12,18 @@ export const EditStudent=()=>{
     const [student,setStudent] = useState(null)
     const {id}=useParams()
 
-    const getStudent=()=>{
-        fetch(`https://6560586d83aba11d99d0a65e.mockapi.io/student/${id}`)
-          .then((data)=>data.json())
-          .then((res)=>setStudent(res))
-    }
-    useEffect(()=> getStudent(),[id])
+    const getStudent=async()=>{
+      try{
+        const response = await fetch(`https://6560586d83aba11d99d0a65e.mockapi.io/student/${id}`)
+          const studentData = await response.json();
+          setStudent(studentData);
+        } catch (error) {
+          console.error("Error fetching student:", error);
+        }
+      };
+    useEffect(()=> {
+      getStudent()
+    },[id]);
 
        return(
         <>
@@ -36,7 +42,7 @@ export const EditStudent=()=>{
         const [year,setYear] = useState(student.year)
         const [validated,setvalidated] = useState(false)
 
-        const updateStudent=(e)=>{
+        const handleUpdateStudent=(e)=>{
             const student= {
                 name: name,
                       batch,
@@ -64,13 +70,13 @@ export const EditStudent=()=>{
             }
              setvalidated(true);
    
-           fetch('https://6560586d83aba11d99d0a65e.mockapi.io/student',{
-               method:"POST",
-               body:JSON.stringify(student),
-               headers:{
-                 "Content-Type":"application/json"
-               }
-             }).then(()=>navigate('/studentlist'))
+          //  fetch('https://6560586d83aba11d99d0a65e.mockapi.io/student',{
+          //      method:"POST",
+          //      body:JSON.stringify(student),
+          //      headers:{
+          //        "Content-Type":"application/json"
+          //      }
+          //    }).then(()=>navigate('/studentlist'))
 
 
                 fetch(`https://6560586d83aba11d99d0a65e.mockapi.io/student/${id}`,{
@@ -84,13 +90,14 @@ export const EditStudent=()=>{
 
         return(
             <>
-            
+
+            <h4 className="header">Edit Student</h4>
             <Box 
                sx={{  width: "100%" }}>
                     <h6 className="valid" >{validated}</h6>
                     <TextField 
-                       sx={{width: "50%", margin:"8% 25% 2% 25%"}}
-                    id="outlined-basic" label="Name:" variant="outlined" 
+                       sx={{width: "50%", margin:"2% 25% 2% 25%"}}
+                    id="outlined-basic" label="Student Name :" variant="outlined" 
                     value={name}
                     onChange={(e)=>{
                       setName(e.target.value)
@@ -99,7 +106,7 @@ export const EditStudent=()=>{
 
                     <TextField 
                         sx={{width: "50%", margin:"0% 25% 2% 25%"}}
-                    id="outlined-basic" label="Batch:" variant="outlined" 
+                    id="outlined-basic" label="Student Batch:" variant="outlined" 
                     value={batch}
                     onChange={(e)=>{
                       setBatch(e.target.value)
@@ -107,7 +114,7 @@ export const EditStudent=()=>{
                     />
                     <TextField 
                          sx={{width: "50%", margin:"0% 25% 2% 25%"}}
-                    id="outlined-basic" label="Year:" variant="outlined" 
+                    id="outlined-basic" label="Student Year:" variant="outlined" 
                     value={year}
                     onChange={(e)=>{
                       setYear(e.target.value)
@@ -120,9 +127,7 @@ export const EditStudent=()=>{
                       <Button  className='mvbtn' color='success'
                       sx={{marginRight:"200%"}} 
                       variant="contained"
-                      onClick={()=>{ 
-                          updateStudent(student.id)
-                      }}
+                      onClick={handleUpdateStudent}
                       >Update Profile</Button>
                       
                       <Button className='mvbtn' sx={{marginLeft:"-50%", width: "8.5%"}}  

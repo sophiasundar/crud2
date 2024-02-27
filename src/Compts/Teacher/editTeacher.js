@@ -12,35 +12,62 @@ export const EditTeacher=()=>{
     const [teacher,setTeacher] = useState(null)
     const {id}=useParams()
 
-    const getTeacher=()=>{
-        fetch(`https://6560586d83aba11d99d0a65e.mockapi.io/teacher/${id}`)
-          .then((data)=>data.json())
-          .then((res)=>setTeacher(res))
+    const getTeacher=async()=>{
+      try{
+        const response = await fetch(`https://6560586d83aba11d99d0a65e.mockapi.io/teacher/${id}`)
+        const teacherData = await response.json();
+        setTeacher(teacherData);
+    }catch (error) {
+      console.error("Error fetching teacher:", error);
     }
-    useEffect(()=> getTeacher(),[])
+  };
+    useEffect(()=>{
+     getTeacher()
+    },[id])
 
        return(
         <>
-          {teacher? <EditTeacherField teacher={teacher}/>: "Loading...." }
+          {teacher? <EditTeacherField teacher={teacher} id={id}/>: "Loading...." }
         </>
        )
        }
 
-       const EditTeacherField = ({teacher})=>{
+       const EditTeacherField = ({teacher, id})=>{
 
         const navigate = useNavigate()
 
         const [name,setName] = useState(teacher.name)
         const [qualification,setQualification] = useState(teacher.qualification)
         const [year,setYear] = useState(teacher.year)
+        const [validated,setvalidated] = useState(false)
 
-        const updateTeacher=(id)=>{
+        const handleUpdateTeacher=(e)=>{
             const teacher= {
                 name: name,
                       qualification,
                       year,
               }
-                // console.log(teacher)
+                console.log(teacher)
+
+                if(teacher.name === ""){
+                  setvalidated("VALID: Name is required");
+                  return;
+            }else if(teacher.qualification === ""){
+                 setvalidated("VALID: Qualification is required");
+                 return;
+            }else if(teacher.year === ""){
+                 setvalidated("VALID: Year is required");
+                 return;
+            }else{
+                setvalidated("")
+            }
+   
+            const form = e.currentTarget;
+            if (form.checkValidity() === false) {
+              e.preventDefault();
+              e.stopPropagation();
+            }
+             setvalidated(true);
       
                 fetch(`https://6560586d83aba11d99d0a65e.mockapi.io/teacher/${id}`,{
                   method:"PUT",
@@ -54,10 +81,11 @@ export const EditTeacher=()=>{
            return(
            <>
                <h4 className="header">Edit Teacher</h4>
+               
                 <Box sx={{ width: "100%" }}>
-                    
+                <h6 className="valid" >{validated}</h6>
                     <TextField 
-                       sx={{width: "50%", margin:"8% 25% 2% 25%"}}
+                       sx={{width: "50%", margin:"1% 25% 2% 25%"}}
                     id="outlined-basic" label="Name:" variant="outlined" 
                       value={name}
                       onChange={(e)=>{
@@ -92,9 +120,7 @@ export const EditTeacher=()=>{
                     <Button  className='mvbtn' color='success'
                       sx={{marginRight:"200%"}} 
                     variant="contained"
-                        onClick={()=>{ 
-                            updateTeacher(teacher.id)
-                        }}
+                    onClick={handleUpdateTeacher}
                     >update teacher</Button>
 
                     <Button  className='mvbtn'
