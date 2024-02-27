@@ -18,7 +18,8 @@
   .para{
     border:0px solid black;
     padding: 30px;
-    margin-top: 50px;
+    margin-top: 70px;
+    margin-bottom: 70px !important;
   }
 
   .cardholder{
