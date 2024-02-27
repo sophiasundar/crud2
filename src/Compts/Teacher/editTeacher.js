@@ -123,7 +123,7 @@ export const EditTeacher=()=>{
                     onClick={handleUpdateTeacher}
                     >update teacher</Button>
 
-                    <Button  className='mvbtn'
+                    <Button  className="b2"
                       sx={{marginLeft:"-50%", width: "8.5%"}}  
                     variant="contained"
                         onClick={()=>{

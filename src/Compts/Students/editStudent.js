@@ -130,7 +130,7 @@ export const EditStudent=()=>{
                       onClick={handleUpdateStudent}
                       >Update student</Button>
                       
-                      <Button className='mvbtn' sx={{marginLeft:"-50%", width: "8.5%"}}  
+                      <Button className="b2" sx={{marginLeft:"-50%", width: "8.5%"}}  
                       variant="contained"
                       onClick={()=>{
                           navigate('/')
