@@ -55,7 +55,7 @@ const AddStudent=()=>{
     
     return(
         <>
-        <h4 className="header">Add Student</h4>
+        <h4 className="hs">Add Student</h4>
 
          <Box sx={{ width: "100%"}}>
          <h6 className="valid" >{validated}</h6>
@@ -99,7 +99,7 @@ const AddStudent=()=>{
       Add student</Button>
       
 
-      <Button className="movebtn" variant="contained"
+      <Button className="b2" variant="contained"
        sx={{margin:"5% 50% 5% 50%"}}
        onClick={()=>{
         navigate('/')

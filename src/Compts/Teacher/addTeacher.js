@@ -54,7 +54,7 @@ const AddTeacher=()=>{
     }
     return(
     <>
-      <h4 className="header">Add Teacher</h4>
+      <h4 className="h">Add Teacher</h4>
         <p className="valid"> {validated}</p>
      <Box
       sx={{ width: "100%"}}
@@ -89,14 +89,14 @@ const AddTeacher=()=>{
       />
     </Box>
 
-    <Stack spacing={0.5} direction="row">
+    <Stack spacing={1} direction="row">
       
       <Button className="btnmove" color="success"
         // sx={{margin:"5% 50% 5% 50%"}}
         variant="contained"
           onClick={handleSubmit}
       >Add Teacher</Button>
-      <Button className="btnmove" variant="contained"
+      <Button className="b2" variant="contained"
         // sx={{margin:"5% 50% 5% 50%"}}
         onClick={()=>{
          navigate('/')

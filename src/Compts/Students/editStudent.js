@@ -91,7 +91,7 @@ export const EditStudent=()=>{
         return(
             <>
 
-            <h4 className="header">Edit Student</h4>
+            <h4 className="et">Edit Student</h4>
             <Box 
                sx={{  width: "100%" }}>
                     <h6 className="valid" >{validated}</h6>
