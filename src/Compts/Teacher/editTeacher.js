@@ -80,13 +80,13 @@ export const EditTeacher=()=>{
 
            return(
            <>
-               <h4 className="header">Edit Teacher</h4>
+             
                
                 <Box sx={{ width: "100%" }}>
                 <h6 className="valid" >{validated}</h6>
                     <TextField 
                        sx={{width: "50%", margin:"1% 25% 2% 25%"}}
-                    id="outlined-basic" label="Name:" variant="outlined" 
+                    id="outlined-basic" label="Teacher Name:" variant="outlined" 
                       value={name}
                       onChange={(e)=>{
                           setName(e.target.value)
@@ -96,7 +96,7 @@ export const EditTeacher=()=>{
                     
                     <TextField 
                        sx={{width: "50%", margin:"0% 25% 2% 25%"}}
-                    id="outlined-basic" label="Qualification" variant="outlined" 
+                    id="outlined-basic" label="Teacher Qualification" variant="outlined" 
                       value={qualification}
                        onChange={(e)=>{
                           setQualification(e.target.value)
@@ -105,7 +105,7 @@ export const EditTeacher=()=>{
 
                     <TextField 
                        sx={{width: "50%", margin:"0% 25% 2% 25%"}}
-                    id="outlined-basic" label="Year" variant="outlined" 
+                    id="outlined-basic" label="TeacherYear" variant="outlined" 
                       value={year}
                       onChange={(e)=>{
                          setYear(e.target.value)

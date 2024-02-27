@@ -24,7 +24,7 @@
 
   .cardholder{
     display: flex !important;
-    gap:10%;
+    gap:10%; 
     flex-wrap: wrap;
     border:0px solid;
     width: 1030px;
@@ -33,3 +33,70 @@
     margin-top:2%;
     margin-bottom:2%;
   }
+
+
+  @media (max-width: 600px) {
+    
+    .para{
+      border:0px solid black;
+      padding: 30px;
+      margin-top: 70px;
+      margin-bottom: 70px !important;
+    }
+
+    .cardholder{
+      display: flex !important;
+      gap:10%; 
+      flex-wrap: wrap;
+      border:0px solid;
+    
+    }
+
+    .header{
+      
+      margin-top: 50px;
+      margin-bottom: 0px;
+    }
+  
+    .card{
+      margin-top: 80px;
+     
+      margin-bottom: 50px;
+      
+    }
+     
+  }
+
+  @media (max-width: 350px) {
+    
+    .para{
+      border:0px solid black;
+      padding: 30px;
+      margin-top: 70px;
+      margin-bottom: 70px !important;
+    }
+
+    .cardholder{
+      display: flex !important;
+      gap:10%; 
+      flex-wrap: wrap;
+      border:0px solid;
+    
+    }
+
+    .header{
+      
+      margin-top: 50px;
+      margin-bottom: 0px;
+    }
+  
+    .card{
+      margin-top: 80px;
+     
+      margin-bottom: 50px;
+      
+    }
+  
+  
+  }
+  

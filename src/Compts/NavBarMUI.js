@@ -6,21 +6,22 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router';
-
+import navBarMUI from './NavBarMUI.css';
 
 const NavBarMUI=()=>{
     const navigate = useNavigate()
     return(
+    
     <>
      
-     <Box sx={{ display: 'flex' }}>
+     <Box className='navbtn' sx={{ flexGrow: 1 }} >
         <CssBaseline />
 
         <AppBar  component="nav">
         
         <Toolbar >
 
-          <Typography
+          <Typography className='navbtn'
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
@@ -29,19 +30,19 @@ const NavBarMUI=()=>{
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             
-              <Button sx={{ color: '#fff' }}
+              <Button  className='navbtn' sx={{ color: '#fff' }}
                onClick={()=>{
                    navigate('/')
                }}
               >DASHBOARD</Button>
 
-            <Button sx={{ color: '#fff' }}
+            <Button className='navbtn' sx={{ color: '#fff' }}
                 onClick={()=>{
                    navigate('/addteacher')
                }}> ADD TEACHER
               </Button>
 
-              <Button sx={{ color: '#fff' }}
+              <Button className='navbtn' sx={{ color: '#fff' }}
                 onClick={()=>{
                    navigate('/addstudent')
                }}> ADD STUDENT

@@ -128,7 +128,7 @@ export const EditStudent=()=>{
                       sx={{marginRight:"200%"}} 
                       variant="contained"
                       onClick={handleUpdateStudent}
-                      >Update Profile</Button>
+                      >Update student</Button>
                       
                       <Button className='mvbtn' sx={{marginLeft:"-50%", width: "8.5%"}}  
                       variant="contained"

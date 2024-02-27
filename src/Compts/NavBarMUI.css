@@ -1,0 +1,22 @@
+.navbtn{
+    margin-right: auto ;
+    margin-left: auto ;
+    gap:2%
+}
+
+@media (max-width: 150px) {
+   .navbtn{
+       margin-right: auto;
+       margin-left: auto;
+       gap:2%
+    }
+}
+
+@media (min-width:200px) and (max-width: 600px) {
+    .navbtn{
+        margin-right: auto;
+        margin-left: auto;
+        gap:2%
+        
+     }
+  }

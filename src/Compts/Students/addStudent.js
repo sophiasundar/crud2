@@ -89,7 +89,7 @@ const AddStudent=()=>{
    
     </Box>
 
-    <Stack  direction="row" spacing={2}>
+    <Stack  direction="row" spacing={0.5}>
       
       <Button className="movebtn" color="success" 
       sx={{margin:"5% 50% 5% 50%"}}
